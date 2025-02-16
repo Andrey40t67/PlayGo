@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Poppy Playtime 2</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #121212;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+      height: 100vh;
+    }
+    h1, p {
+      text-align: center;
+      font-weight: bold;
+      animation: fadeIn 3s ease;
+    }
+    h1 {
+      font-size: 3em;
+      color: #00FF00;
+    }
+    p {
+      font-size: 1.2em;
+      color: #BBB;
+      margin-top: 20px;
+    }
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+    }
+    @keyframes gradientMove {
+      0% {background-position: 0 0;}
+      50% {background-position: 100% 100%;}
+      100% {background-position: 0 0;}
+    }
+    .smiley {
+      position: absolute;
+      animation: smileyAnim 5s infinite;
+    }
+    .smiley img {
+      width: 50px;
+      filter: blur(4px);
+    }
+    @keyframes smileyAnim {
+      0% {transform: translate(100px, 100px);}
+      50% {transform: translate(400px, 300px);}
+      100% {transform: translate(100px, 100px);}
+    }
+    .download-btn {
+      display: block;
+      width: 200px;
+      height: 50px;
+      margin: 30px auto;
+      background-color: #00FF00;
+      color: black;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      animation: fadeIn 3s ease;
+    }
+    .download-btn:hover {
+      background-color: #ff00ff;
+    }
+    .instructions {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+    .download-info {
+      display: none;
+      text-align: center;
+      font-size: 1.1em;
+      color: #00FF00;
+    }
+    .download-info.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background"></div>
+  
+  <h1>Poppy Playtime 2</h1>
+  <p>Скачай игру и вступай в мир Паппи Плейтайм!</p>
+  
+  <div class="smiley" style="top: 10%; left: 20%;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Unicode_emoji_1f603.svg" alt="smiley">
+  </div>
+
+  <div class="smiley" style="top: 50%; left: 40%;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Unicode_emoji_1f603.svg" alt="smiley">
+  </div>
+
+  <button class="download-btn" id="downloadBtn">Скачать APK</button>
+
+  <div class="instructions">
+    <p>Нажмите на кнопку ниже для загрузки APK файла.</p>
+    <p>Следуйте инструкции, чтобы установить игру.</p>
+  </div>
+
+  <div class="download-info" id="downloadInfo">
+    <p>Скачайте файл с гугл диска...</p>
+  </div>
+
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+      // Показать информацию о скачивании
+      document.getElementById('downloadInfo').classList.add('active');
+      
+      // Здесь будет код для скачивания файла (например, ссылки на файлы)
+      setTimeout(function() {
+        window.location.href = 'https://drive.google.com/file/d/1GQePSnYsXyVx7qSuuAK_kOurqbkMIMe4/view?usp=drive_link';
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
